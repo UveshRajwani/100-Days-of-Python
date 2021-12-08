@@ -13,7 +13,7 @@ while not end:
     else:
         highest_bid = 0
         highest_bidder = ""
-        for name, bid in all_bides:
+        for name, bid in all_bides.items():
             if bid > highest_bid:
                 highest_bid = bid
                 highest_bidder = name

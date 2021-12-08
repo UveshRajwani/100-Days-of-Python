@@ -12,7 +12,6 @@ def encode(shift, text):
     for letters in text:
         new_index = alphabet.index(letters) + shift
         answer += alphabet[new_index]
-
     return print(answer)
 def decode(shift, text):
     answer = ''
