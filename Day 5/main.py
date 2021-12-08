@@ -22,7 +22,7 @@ for _ in range(0, nr_symbols):
 for _ in range(0, nr_numbers):
     answer.append(random.choice(numbers))
 
-for i in answer:
+for i in answer:        
     password = password+i
 print(f"password: {password}")
 #Hard Level - Order of characters randomised:
