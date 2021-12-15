@@ -7,14 +7,20 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 20
+WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 timer_count = 1
 mark = ""
 
 # ---------------------------- TIMER RESET ------------------------------- #
-
+def reset():
+    global mark
+    global timer_count
+    mark = ""
+    timer_count = 1
+    check_mark.config(text=mark)
+    canvas.itemconfig(timer, text="00:00")
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global mark
@@ -22,9 +28,9 @@ def start_timer():
         if timer_count % 2 == 0:
             count_down(SHORT_BREAK_MIN*60)
         else:
-            count_down(WORK_MIN)
+            count_down(WORK_MIN*60)
             mark += "✓"
-            check_mark.config(text=mark*60)
+            check_mark.config(text=mark)
     elif timer_count == 8:
         count_down(LONG_BREAK_MIN*60)
 
