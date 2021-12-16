@@ -29,7 +29,12 @@ file = pandas.read_csv("nato_phonetic_alphabet.csv")
 file1 = {row.letter: row.code for (index, row) in file.iterrows()}
 print(file1)
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user = input("What is you name ").upper()
-user = list(user)
-answer = [file1[n] for n in user]
-print(answer)
+while True:
+    try:
+        user = input("What is you name ").upper()
+        user = list(user)
+        answer = [file1[n] for n in user]
+    except KeyError:
+        print("Sorry . Only letters in the alphabet please.")
+    else:
+        print(answer)
