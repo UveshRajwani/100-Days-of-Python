@@ -54,7 +54,6 @@ def search_password():
         pyperclip.copy(data["password"])
 
 
-
 def add_password():
     new_data = {
         website.get(): {
@@ -107,6 +106,6 @@ gen_button = Button(text="Generate Password", command=gen_passowrd)
 gen_button.grid(row=3, column=2)
 add_button = Button(width=35, text="Add", command=add_password)
 add_button.grid(row=4, column=1)
-search = Button(text="Search",command=search_password)
+search = Button(text="Search", command=search_password)
 search.grid(row=1, column=2)
 window.mainloop()
