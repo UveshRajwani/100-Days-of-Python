@@ -9,7 +9,6 @@ class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
         loadUi("main.ui", self)
-        self.test = 0
         self.timeout = time.time() + 5  # 5 s from now
         self.timer = QTimer()
         self.timer.timeout.connect(self.clear)
